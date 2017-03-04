@@ -1,0 +1,49 @@
+Question 1.	What are various Supported distributed storage systems by spark?
+	Hadoop HDFS, Amazon S3
+	OpenStack Swift, Tachyon
+	NoSQL data stores; e.g., Cassandra, HBase, MongoDB
+	Any appropriate system that implements the Hadoop file system API
+
+Question 2.	Can Spark run in standalone local mode?
+	Yes, native file system or HDFS running in pseudo-distributed mode
+
+Question 3.	List some features of HDFS?
+	Distributed file system designed to use commodity clusters
+	Resilient and fault-tolerant - provides Data replication - default is 3
+	Designed for many petabytes of data
+	Write once, read many
+	HDFS is based on a master/worker architecture
+	The default Block size is 128 MB
+	HDFS Reliability - DataNodes send heartbeat messages to the NameNode
+	NOT a general purpose, POSIX-compliant file system	
+
+Question 4.	If you are Loading a Cluster With Big Data what kind of speed is expected?
+	Typically expect 300–400 GB/hour for Gigabit Ethernet
+
+Question 5.	Some Common FS Shell Commands
+	List remote files/directories
+	hdfs dfs –ls /user/spark
+	Create remote directory
+	hdfs dfs –mkdir /user/spark/data/
+
+Question 6.	What is RDD?
+	Immutable collections of elements
+	Operations on RDDs are automatically parallelized across cluster nodes
+	Fault tolerant - Maintain an operation lineage for reconstruction in the event of failures
+
+Question 7.	What are Transformations and Actions?
+Transformations
+	Split into partitions and distributed across the nodes of a cluster
+	Operated on in parallel
+	Operations that return a new RDD
+	Computed lazily
+
+Actions
+	Actually do stuff!
+	Return data to the driver program 
+
+Question 8.	while creating RDD, it must fit on the spark driver instance, true or false?
+	True
+
+
+
